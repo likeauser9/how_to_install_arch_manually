@@ -1,0 +1,1 @@
+# how_to_install_arch_manually
