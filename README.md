@@ -1,7 +1,7 @@
 # how_to_install_arch_manually
 
-- 1 step
-## Download an arch iso and write it into an usb drive
+### 1 step
+Download an arch iso and write it into an usb drive
 
 ### 2 step
 If you want to change your keyboard layout
