@@ -130,4 +130,4 @@ sudo systemctl enable gdm
 sudo systemctl enable --now gdm
 ```
 
-Congratulations!!! You have successfully installed Arch Linux.
+### Congratulations!!! You have successfully installed Arch Linux.
