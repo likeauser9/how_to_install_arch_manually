@@ -3,14 +3,14 @@
 ## 1 step
 ### Download an arch iso and write it into an usb drive
 
-### 2 step
-If you want to change your keyboard layout
+## 2 step
+### If you want to change your keyboard layout
 ```bash
 loadkeys us
 ```
 
-### 3 step
-connect to the internet
+## 3 step
+### Connect to the internet
 ```bash
 iwctl
 station wlan0 show
@@ -22,8 +22,8 @@ exit
 ping archlinux.org
 ```
 
-- 3 step
-## Disk configuration
+## 3 step
+### Disk configuration
 ```bash
 lsblk
 cfdisk /dev/sda (type your ssd name)
@@ -34,8 +34,8 @@ make a rest of GB for /dev/sda3
 press write and type yes
 quit cfdisk
 
-- 4 step
-## make a file system
+## 4 step
+### Make a file system
 ```bash
 lsblk
 mkfs.ext4 /dev/sda3
@@ -43,8 +43,8 @@ mkfs.fat -F 32 /dev/sda1
 mkswap /dev/sda2
 ```
 
-- 5 step
-## mount all partitions
+## 5 step
+### Mount all partitions
 ```bash
 mount /dev/sda3 /mnt
 mkdir -p /mnt/boot/efi
@@ -53,22 +53,22 @@ swapon /dev/sda2
 lsblk
 ```
 
-- 6 step
-## installing packages into /mnt
+## 6 step
+### Installing packages into /mnt
 ```bash
 pacstrap /mnt base linux linux-firmware sof-firmware(if you have a new sound card) base-devel grub efibootmgr nano networkmanager
 ```
 
-- 7 step
-## generating fstab
+## 7 step
+### Generating fstab
 ```bash
 genfstab /mnt
 genfstab /mnt > /mnt/etc/fstab
 cat /mnt/etc/fs
 ```
 
-- 8 step
-## Enter an arch chroot
+## 8 step
+### Enter an arch chroot
 ```bash
 arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
@@ -85,15 +85,15 @@ nano /etc/hostname
 type your hostname and exit nano
 ```
 
-- 9 step
-## root password
+## 9 step
+### Root password
 ```bash
 passwd
 create your password
 ```
 
-- 10 step
-## create a user
+## 10 step
+### Create a user
 ```bash
 useradd -m -G wheel -s /bin/bash <your name>
 passwd <your name>
@@ -107,8 +107,8 @@ sudo pacman -Syu
 exit
 ```
 
-- step 11
-## enabling system services
+## 11 step
+### Enabling system services
 ```bash
 systemctl enable NetworkManager
 grub-install /dev/sda
@@ -118,8 +118,8 @@ umount -a
 reboot(then boot into arch)
 ```
 
-- step 12
-## connect to the network and install a visual environment
+## 12 step
+### Connect to the network and install a visual environment
 ```bash
 login by typing your name and password
 nmcli device
