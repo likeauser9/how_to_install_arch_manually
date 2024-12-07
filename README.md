@@ -14,7 +14,6 @@ loadkeys us
 ```bash
 iwctl
 station wlan0 show
-wifi device list
 device list
 station wlan0 scan
 station wlan0 connect <SSID> and type your wifi password
@@ -64,7 +63,7 @@ pacstrap /mnt base linux linux-firmware sof-firmware(if you have a new sound car
 ```bash
 genfstab /mnt
 genfstab /mnt > /mnt/etc/fstab
-cat /mnt/etc/fs
+cat /mnt/etc/fstab
 ```
 
 ## 8 step
@@ -74,7 +73,7 @@ arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 date
 hwclock --systohc
-nano /etc/local.gen
+nano /etc/locale.gen
 uncommect your locale by removing a #, press CTRL + O, press Enter and then CTRL + X
 locale-gen
 nano /etc/locale.conf
@@ -82,7 +81,7 @@ type for example LANG=en_US.UTF-8 and exit nano
 nano /etc/vsconsole.conf
 type for ex KEYMAP=us and exit nano
 nano /etc/hostname
-type your hostname and exit nano
+type your hostname and exit nano (its name next to the @ in terminal)
 ```
 
 ## 9 step
